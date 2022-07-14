@@ -6,7 +6,6 @@ package dev.mmccall.farmdisp;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
-import org.bukkit.block.Container;
 import org.bukkit.block.data.type.Dispenser;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -55,13 +54,30 @@ class DispenseHandler implements Listener {
             return;
         }
 
-        if (item.getType() != Material.WHEAT_SEEDS) {
-            return;
+        switch (item.getType()) {
+            case WHEAT_SEEDS:
+                facingBlock.setType(Material.WHEAT);
+                break;
+            case CARROT:
+                facingBlock.setType(Material.CARROTS);
+                break;
+            case POTATO:
+                facingBlock.setType(Material.POTATOES);
+                break;
+            case BEETROOT_SEEDS:
+                facingBlock.setType(Material.BEETROOTS);
+                break;
+            case MELON_SEEDS:
+                facingBlock.setType(Material.MELON_STEM);
+                break;
+            case PUMPKIN_SEEDS:
+                facingBlock.setType(Material.PUMPKIN_STEM);
+                break;
+            default:
+                return;
         }
 
         item.subtract();
-
-        facingBlock.setType(Material.WHEAT);
         e.setCancelled(true);
     }
 
