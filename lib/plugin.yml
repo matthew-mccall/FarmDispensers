@@ -1,0 +1,8 @@
+name: FarmDispensers
+main: dev.mmccall.farmdisp.FarmDispensers
+version: 0.1.0
+description: This plugin for 1.19 Paper Minecraft Servers makes it so that dispensers can plant seeds on tilled soil.
+api-version: 1.19
+author: matthew+spigot@mmccall.dev
+website: mmccall.dev
+prefix: farmdisp
